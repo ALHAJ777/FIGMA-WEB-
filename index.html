@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio • Blog Section</title>
+  <style>
+    :root{
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text-strong: #111827;
+      --text-muted: #6b7280;
+      --accent: #3b82f6;
+      --card-radius: 12px;
+      --gap: 1.5rem;
+    }
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text-strong);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .site {
+      max-width:1200px;
+      margin:0 auto;
+      padding:4rem 1rem;
+    }
+
+    .section-title {
+      text-align:center;
+      font-size:2.25rem;
+      margin-bottom:2.5rem;
+    }
+
+    .blog-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--gap);
+    }
+
+    .post-card{
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 1.25rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+      display:flex;
+      flex-direction:column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      min-height: 170px;
+    }
+    .post-card:hover,
+    .post-card:focus-within{
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -8px rgba(0,0,0,0.12);
+    }
+
+    .post-header { margin-bottom:0.5rem; }
+    .post-title {
+      font-size:1.15rem;
+      margin:0 0 0.4rem 0;
+      color:var(--text-strong);
+    }
+    .post-date {
+      color:var(--text-muted);
+      font-size:0.9rem;
+      margin-bottom:0.9rem;
+      display:block;
+    }
+
+    .post-excerpt{
+      color:#4b5563;
+      line-height:1.6;
+      margin:0 0 1rem 0;
+      /* two-line clamp */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .read-more{
+      color:var(--accent);
+      font-weight:600;
+      text-decoration:none;
+      margin-top:auto; /* pushes link to bottom */
+    }
+    .read-more:hover,
+    .read-more:focus{
+      text-decoration:underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="site">
+    <section id="blog" aria-labelledby="blog-heading">
+      <h2 id="blog-heading" class="section-title">Blog</h2>
+
+      <div class="blog-grid">
+        <article class="post-card" aria-labelledby="post-1-title">
+          <header class="post-header">
+            <h3 id="post-1-title" class="post-title">ALHAJ M</h3>
+            <time class="post-date" datetime="2026-06-05">June 5, 2026</time>
+          </header>
+          <p class="post-excerpt">After months of experimenting with different layouts, I finally landed on a clean design that feels both modern and personal. The key was keeping things simple.</p>
+          <a class="read-more" href="#">Read More →</a>
+        </article>
+
+        <article class="post-card" aria-labelledby="post-2-title">
+          <header class="post-header">
+            <h3 id="post-2-title" class="post-title">PATTERNS</h3>
+            <time class="post-date" datetime="2026-05-28">May 28, 2026</time>
+          </header>
+          <p class="post-excerpt">Switching from floats and flexbox to Grid felt like upgrading from a bicycle to a sports car. Responsive layouts became dramatically easier to manage.</p>
+          <a class="read-more" href="#">Read More →</a>
+        </article>
+
+        <article class="post-card" aria-labelledby="post-3-title">
+          <header class="post-header">
+            <h3 id="post-3-title" class="post-title">SANKALAP</h3>
+            <time class="post-date" datetime="2026-05-15">May 15, 2026</time>
+          </header>
+          <p class="post-excerpt">The biggest lesson? Start ugly. The projects that actually got finished were the ones I allowed myself to launch with imperfect code and design.</p>
+          <a class="read-more" href="#">Read More →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
